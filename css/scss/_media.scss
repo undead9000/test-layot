@@ -1,0 +1,179 @@
+// _media-queries.scss
+
+/*------------------------------------*\
+    RESPONSIVE
+\*------------------------------------*/
+
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+$large: 1200px;
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx),
+only screen and (min-width: $large)
+{
+  header {
+    background: url("../img/header-bg@2x.jpg") no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+  }
+  .age {
+    .wrapper {
+      background: url("../img/age-bg@2x.png") no-repeat;
+      background-position: center 104%;
+      background-size: 83% 56%;
+    }
+  }
+  .support {
+    background: url("../img/support-bg@2x.png") no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+    background-color: #1b97c5;
+  }
+  .join {
+    &__imgwrap {
+      background: url("../img/join-bg@2x.jpg") no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
+@media screen and (max-width: $large) {
+  .wrapper {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+@media screen and (max-width: $desktop) {
+  .slicknav {
+    &_menu {
+      display: block;
+      background: none;
+      position: relative;
+    }
+    &_nav {
+      background: #222;
+      position: absolute;
+      right: 10px;
+      top: 38px;
+      width: 200px;
+    }
+  }
+  header {
+    //background-position: left bottom;
+    .menu {
+      display: none;
+    }
+    .introduce {
+      &__title {
+        font-size: 42px;
+      }
+    }
+  }
+  .age {
+    .wrapper {
+      background-position: center bottom;
+      background-size: 83%;
+    }
+    &__title {
+      font-size: 42px;
+    }
+  }
+  .join {
+    &__title {
+      font-size: 42px;
+    }
+  }
+}
+@media screen and (max-width: $tablet) {
+  header {
+    .introduce {
+      &__desc {
+        width: 100%;
+      }
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.25);
+    }
+  }
+  .mbis {
+    max-width: 100%;
+    padding: 68px 20px 80px;
+  }
+  .support {
+    &__slider {
+      width: 80%;
+    }
+  }
+  .join {
+    flex-direction: column;
+    max-height: none;
+    max-height: unset;
+    height: auto;
+    &__imgwrap {
+      width: 100%;
+      padding-top: 50.67%;
+    }
+    &__textwrap {
+      width: 100%;
+      padding: 37px 0 37px 30px;
+    }
+  }
+}
+@media screen and (max-width: $mobile) {
+  .wrapper {
+    padding: 0 12px;
+  }
+  header {
+    .logo {
+      img {
+        max-width: 260px;
+      }
+    }
+    .introduce {
+      &__title {
+        font-size: 36px;
+      }
+    }
+  }
+  .age {
+    &__title {
+      font-size: 36px;
+    }
+  }
+  .join {
+    &__title {
+      font-size: 36px;
+    }
+    &__textwrap {
+      padding: 37px 15px;
+    }
+    &__inner {
+      height: 400px;
+    }
+  }
+  footer {
+    .menu {
+      li {
+        margin: 0 24px 0 0;
+        a {
+          font-size: 14px;
+        }
+      }
+    }
+    .address {
+      font-size: 13px;
+    }
+  }
+}
